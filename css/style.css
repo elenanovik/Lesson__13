@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Roman.woff2") format('woff2'),
+        url("../fonts/HelveticaNeueCyr-Roman.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+* {
+    color: #000;
+}
+li {
+    list-style: none;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+img {
+    vertical-align: top;
+} 
+/* -------------------- */
+
+html, 
+body {
+    height: 100%;
+}
+html {
+  font-size: 16px;  
+}
+body {
+    line-height: 1;
+    overflow-x: hidden;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;    
+}
+.wrapper {
+    min-height: 100%;
+}
+[class*="__box"] {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+/* -------------------- */
+
+/* MAIN */
+.block-clock {
+    height: 217px;
+}
+.clock__life {
+    text-align: center;
+}
+.clock__antique-clock {
+    width: 158px;
+    height: auto;
+}
+.clock__pendulum-clock {
+    position: relative;
+    animation: pendulum-clock 1.5s infinite linear alternate;
+}
+@keyframes pendulum-clock {
+    0% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(15deg);
+    }
+}
+.clock__pendulum-clock::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 60px;
+    width: 3px;
+    background-color: #000;
+    top: -4px;
+    left: 50%;
+    transform-origin: 0 0;
+}
+.clock__pendulum-clock::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.seasons__content {
+    display: flex;
+    justify-content: space-between;
+}
+.winter__seasons,
+.spring__seasons,
+.summer__seasons,
+.autumn__seasons  {
+    width: 200%;
+    height: auto;
+}
+.route {
+    position: relative;
+    height: 330px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 500%;
+}
+.route::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    background-color: #fff;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 0;
+}
+.car-content {
+    position: relative;
+    animation: seasonsname 6s linear 0s infinite normal;
+}
+@keyframes seasonsname {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(1600px);
+    }
+}
+.content {
+    padding: 0 0 22px 0;
+    position: absolute;
+    left: 17px;
+    bottom: 100px;
+    z-index: 2;
+}
+.content__body {
+    width: 380px;
+    height: 220px;
+    background-color: #FDCC0E;
+    position: relative;
+    left: 0;
+    border-radius: 63% 80% 0 0 / 110% 120% 0% 0%;
+    transform: translateX(-50%);
+}
+.body__car {
+    position: relative;
+}
+.body__head {
+    position: absolute;
+    background-color: #FDCC0E;
+    width: 200px;
+    height: 130px;
+    border-radius: 0 120px 20px 0;
+    left: 260px;
+    top: 90px;
+}
+.body__window-left {
+    display: inline-block;
+    position: absolute;
+    background-color: #B3F1FE;
+    border-radius: 100% 9% 4% 0%;
+    top: 16px;
+    width: 134px;
+    height: 80px;
+    left: 40px;
+    border: 3px solid #000;
+}
+.body__window-right {
+    right: 70px;
+    background-color: #B3F1FE;
+    border-radius: 17% 100% 4% 0%;
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    width: 134px;
+    height: 80px;
+    border: 3px solid #000;
+}
+.body__door-right,
+.body__door-left {
+    right: 70px;
+    background-color: #FDCC0E;
+    border-radius: 9% 8% 42% 7%;
+    display: inline-block;
+    position: absolute;
+    bottom: 40px;
+    width: 134px;
+    height: 80px;
+    border: 4px solid #F7A802;
+}
+.body__door-left {
+    left: 38px;
+    border-radius: 9% 8% 7% 42%;
+}
+.body__wheel-left {
+    bottom: -185px;
+    left: 42px;
+}
+.body__wheel-left,
+.body__wheel-right {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    border-radius: 100%; 
+    background-image: -webkit-radial-gradient(50% 50%, ellipse cover, #e6e5ca 21%, #1f1e1b 33%);
+    background-image:    -moz-radial-gradient(50% 50%, ellipse cover, #e6e5ca 21%, #1f1e1b 33%);
+    background-image:     -ms-radial-gradient(50% 50%, ellipse cover, #e6e5ca 21%, #1f1e1b 33%);
+}
+.body__wheel-right {
+    bottom: -185px;
+    left: 228px;
+}
+.body__doorstep-left,
+.body__doorstep-center,
+.head__doorstep-right {
+    position: absolute;
+    display: inline-block;
+    height: 20px;
+    background-color: #F5A802;
+}
+.body__doorstep-left {    
+    bottom: -3px;
+    left: -3px;
+    width: 56px;    
+    border-radius: 0px 0px 0px 13px;
+}
+.body__doorstep-center {
+    bottom: 0;
+    left: 129px;
+    width: 216px;
+}
+.head__doorstep-right {
+    bottom: 0;
+    right: -5px;
+    width: 54px;
+    border-radius: 0px 0px 20px 0px;
+}
+.body__taillight,
+.head__headlight {
+    display: inline-block;
+    position: absolute;
+    background-color: #FB7A38;
+}
+.body__taillight {    
+    left: 0;
+    bottom: 28px;
+    width: 18px;
+    height: 42px;    
+    border-radius: 10px 15px 30px 0px;
+}
+.head__headlight {
+    left: 143px;
+    bottom: 73px;    
+    width: 28px;
+    height: 37px;
+    border-radius: 21px 87px 20px 90px;
+    transform: rotate(-28deg);
+}
+.body__side-mirror {
+    display: inline-block;
+    position: absolute;
+    top: 75px;
+    right: 48px;
+    background-color: #FB7A38;
+    width: 32px;
+    height: 26px;
+    border-radius: 8px 12px 33px 5px;
+    transform: rotate(4deg);
+    box-shadow: #F7A802 5px 5px 2px 0px;
+}
+.body__handle-left,
+.body__handle-right {
+    display: inline-block;
+    position: absolute;
+    bottom: 101px;
+    background-color: #FB7A38;
+    width: 20px;
+    height: 5px;
+}
+.body__handle-left {
+    left: 143px;
+}
+.body__handle-right {
+    right: 172px;
+}
+
+/* FOOTER */
+
+/* -------------------- */
